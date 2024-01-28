@@ -1,0 +1,170 @@
+{
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    },
+    "env": {
+      "browser": true,
+      "es6": true,
+      "node": true,
+      "jest": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 2021,
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "sourceType": "module"
+    },
+    "extends": [
+      "plugin:react/recommended",
+      "eslint:recommended"
+    ],
+    "plugins": ["react"],
+    "parser": "@babel/eslint-parser",
+    "rules": {
+      "no-multi-spaces": [
+        "error",
+        { "ignoreEOLComments": true }
+      ],
+      "no-mixed-spaces-and-tabs": "error",
+      "linebreak-style": [
+        "error",
+        "unix"
+      ],
+      "semi": [
+        "error",
+        "never"
+      ],
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [
+            ".js",
+            ".jsx"
+          ]
+        }
+      ],
+      "react/forbid-component-props": 0,
+      "react/no-set-state": 0,
+      "react/no-unstable-nested-components": "off",
+      "react/jsx-props-no-spreading": 0,
+      "react/react-in-jsx-scope": "off",
+      "react/jsx-max-props-per-line": [
+        1,
+        {
+          "when": "multiline"
+        }
+      ],
+      "react/jsx-sort-props": [
+        1,
+        {
+          "shorthandLast": true,
+          "ignoreCase": false
+        }
+      ],
+      "react/jsx-no-literals": [
+        0
+      ],
+      "react/no-danger": 1,
+      "react/jsx-max-depth": 0,
+      "react/prefer-stateless-function": [
+        2,
+        {
+          "ignorePureComponents": true
+        }
+      ],
+      "react/no-array-index-key": 1,
+      "react/function-component-definition": 0,
+      "import/no-named-as-default": 0,
+      "object-shorthand": ["error", "always"],
+      "camelcase": [
+        1,
+        {
+          "properties": "never",
+          "ignoreDestructuring": true
+        }
+      ],
+      "import/no-extraneous-dependencies": [
+        0
+      ],
+      "max-len": [
+        2,
+        {
+          "code": 125,
+          "tabWidth": 2
+        }
+      ],
+      "react/no-multi-comp": 0,
+      "react/jsx-no-bind": 0,
+      "react/jsx-indent": [
+        2, 2,
+        { "checkAttributes": true, "indentLogicalExpressions": true }
+      ],
+      "react/jsx-indent-props": [2, 2],
+      "react/jsx-one-expression-per-line": "off",
+      "indent": [2,2],
+      "no-underscore-dangle": 1,
+      "comma-dangle": [
+        "error",
+        "always-multiline"
+      ],
+      "brace-style": [
+        "error",
+        "1tbs",
+        {
+          "allowSingleLine": true
+        }
+      ],
+      "object-curly-spacing": [
+        "error",
+        "always"
+      ],
+      "quotes": [
+        "error",
+        "single",
+        {
+          "avoidEscape": true
+        }
+      ],
+      "jsx-quotes": [
+        "error",
+        "prefer-double"
+      ],
+      "react/jsx-pascal-case": [
+        2,
+        {
+          "allowAllCaps": false,
+          "ignore": ["SVG"]
+        }
+      ],
+      "no-console": [
+        "warn",
+        {
+          "allow": [
+            "warn",
+            "error"
+          ]
+        }
+      ],
+      "react/jsx-handler-names": ["warn", {
+        "eventHandlerPrefix": "warn",
+        "eventHandlerPropPrefix": "warn"
+      }],
+      "no-trailing-spaces": 2,
+      "react/jsx-no-useless-fragment": "off",
+      "react/jsx-curly-brace-presence": [2, {
+        "props": "never",
+        "children": "never",
+        "propElementValues": "always"
+      }],
+      "react/jsx-closing-tag-location": 2,
+      "react/jsx-closing-bracket-location": 2,
+      "react/self-closing-comp": ["error", {
+        "component": true,
+        "html": true
+      }]
+    }
+  }
+  
