@@ -25,7 +25,7 @@ const Search = () => {
         className="form-control form-control-md mr-3 w-100"
         id="username"
         onChange={(e) => handleSearchChange(e.target.value)}
-        placeholder="Search username"
+        placeholder="Search by username"
         type="text"
         value={search}
       />

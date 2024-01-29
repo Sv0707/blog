@@ -2,16 +2,9 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-let mode = 'development'
-let target = 'web'
-if (process.env.NODE_ENV === 'production') {
-  mode = 'production'
-  target = 'browserslist'
-}
-
 module.exports = {
-  mode,
-  target,
+  mode: 'development',
+  target: 'web',
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
@@ -25,7 +18,7 @@ module.exports = {
   output: {
     publicPath: '/',
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'build'),
   },
   resolve: {
     extensions: ['.jsx', '.js'],
@@ -58,7 +51,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg|webp|ico)$/i,
-        type: mode === 'production' ? 'asset' : 'asset/resource',
+        type: 'asset/resource',
       },
       {
         test: /\.(js|jsx)$/,
