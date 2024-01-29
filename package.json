@@ -1,7 +1,7 @@
 {
   "name": "blog",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "-": "^0.0.1",
     "@babel/eslint-parser": "^7.23.9",
