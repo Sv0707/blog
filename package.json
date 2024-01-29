@@ -44,7 +44,6 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://Sv0707.github.io/blog/",
   "devDependencies": {
     "gh-pages": "^6.1.1",
     "sass": "^1.70.0"
