@@ -44,7 +44,7 @@ const Home = () => {
       <Helmet>
         <title>{metatags.home.title}</title>
         <meta content={metatags.home.description} name="description" />
-        <link href={`${window.location.origin}/`} rel="canonical" />
+        <link href="https://sv0707-blog-app.netlify.app/" rel="canonical" />
         <meta content="index, follow" name="robots" />
       </Helmet>
       <div className="container">

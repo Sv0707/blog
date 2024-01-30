@@ -50,7 +50,7 @@ const Albums = () => {
       <Helmet>
         <title>{`${userData?.name || ''}'s ${metatags.albums.title}`}</title>
         <meta content={`Albums of ${userData?.name || ''}. ${metatags.albums.description}`} name="description" />
-        <link href={`${window.location.origin}/albums/${userId}`} rel="canonical" />
+        <link href={`https://sv0707-blog-app.netlify.app/albums/${userId}`} rel="canonical" />
         <meta content="index, follow" name="robots" />
       </Helmet>
       <div className="container">
