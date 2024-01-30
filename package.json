@@ -16,12 +16,14 @@
     "react-helmet": "^6.1.0",
     "react-router-dom": "^6.21.3",
     "react-scripts": "5.0.1",
+    "react-snap": "^1.23.0",
     "sass-loader": "^14.0.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "postbuild": "react-snap"
   },
   "engines": {
     "node": ">=14.0.0"
