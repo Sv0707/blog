@@ -24,7 +24,7 @@ const Users = ({ users, order, handleSort }) => {
                 onClick={handleSort}
                 type="button"
               >
-                {order === 'desc' ? <SortDownIcon /> : <SortUpIcon />}
+                {(order === 'asc' || order === '') ? <SortDownIcon /> : <SortUpIcon />}
               </button>
             </div>
           </th>
