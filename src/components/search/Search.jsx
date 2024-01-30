@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useQueryParams } from '../../hooks/useQueryParams'
 import Button from '../../ui-kit/components/buttons/Button'
-import { debounce } from 'lodash'
+import debounce from 'lodash.debounce'
 
 const Search = () => {
   const { queryParams, setQueryParams, removeQueryParam } = useQueryParams()

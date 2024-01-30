@@ -39,7 +39,7 @@ const Album = ({ albumId, title }) => {
 
   return (
     <li className="card mb-4">
-      <div className="card-body">
+      <div className="card-body min-height">
         <h2 className="card-title">{capitalizeFirstWord(title)}</h2>
         {isLoading ? (
           ''

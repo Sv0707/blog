@@ -2,9 +2,11 @@ import React, { useState, useCallback, useEffect, useMemo } from 'react'
 import { getOneUser } from '../../api/users'
 import { getAllAlbumsByUser } from '../../api/albums'
 import { useParams, useNavigate } from 'react-router-dom'
+import { metatags } from '../../constants/metatags'
 import Loader from '../../ui-kit/components/loader/Loader'
 import Button from '../../ui-kit/components/buttons/Button'
 import Album from '../../components/albums/Album'
+import { Helmet } from 'react-helmet'
 
 const Albums = () => {
   const [albums, setAlbums] = useState([])
@@ -44,22 +46,30 @@ const Albums = () => {
   }, [handleFetch])
 
   return (
-    <div className="container">
-      <Button
-        className="btn btn-light btn-md mb-4"
-        label="Go back"
-        onClick={handleGoBack}
-        type="button"
-      />
-      <h1 className="mb-4">List of {userData?.name}`s albums</h1>
-      <div className="col">
-        {isLoading ? (
-          <Loader />
-        ) : (
-          <ul className="list-group">{renderContent}</ul>
-        )}
+    <>
+      <Helmet>
+        <title>{`${userData?.name || ''}'s ${metatags.albums.title}`}</title>
+        <meta content={`Albums of ${userData?.name || ''}. ${metatags.albums.description}`} name="description" />
+        <link href={`${window.location.origin}/albums/${userId}`} rel="canonical" />
+        <meta content="index, follow" name="robots" />
+      </Helmet>
+      <div className="container">
+        <Button
+          className="btn btn-light btn-md mb-4"
+          label="Go back"
+          onClick={handleGoBack}
+          type="button"
+        />
+        <h1 className="mb-4">List of {userData?.name}`s albums</h1>
+        <div className="col">
+          {isLoading ? (
+            <Loader />
+          ) : (
+            <ul className="list-group">{renderContent}</ul>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 

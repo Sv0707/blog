@@ -6,6 +6,7 @@ import '../src/ui-kit/styles/core.scss'
 const Home = lazy(() => import('./pages/home/Home'))
 const Posts = lazy(() => import('./pages/posts/Posts'))
 const Albums = lazy(() => import('./pages/albums/Albums'))
+const PageNotFound = lazy(() => import('./pages/pageNotFound/PageNotFound'))
 
 function App() {
   return (
@@ -35,6 +36,14 @@ function App() {
             </Suspense>
           }
           path="/albums/:id"
+        />
+        <Route
+          element={
+            <Suspense fallback={<Loader />}>
+              <PageNotFound />
+            </Suspense>
+          }
+          path="*"
         />
       </Routes>
     </BrowserRouter>
