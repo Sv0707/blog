@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useEffect, useMemo } from 'react'
 import { getOneUser } from '../../api/users'
 import { getAllAlbumsByUser } from '../../api/albums'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { metatags } from '../../constants/metatags'
 import Loader from '../../ui-kit/components/loader/Loader'
 import Button from '../../ui-kit/components/buttons/Button'
@@ -14,16 +14,6 @@ const Albums = () => {
   const [userData, setUserData] = useState({})
 
   const { id: userId } = useParams()
-
-  const navigate = useNavigate()
-
-  const handleGoBack = () => {
-    if (window.history.state && window.history.state.idx > 0) {
-      navigate(-1)
-    } else {
-      navigate('/', { replace: true })
-    }
-  }
 
   const handleFetch = useCallback(async () => {
     setIsLoading(true)
@@ -56,8 +46,8 @@ const Albums = () => {
       <div className="container">
         <Button
           className="btn btn-light btn-md mb-4"
-          label="Go back"
-          onClick={handleGoBack}
+          label="Back home"
+          link="/"
           type="button"
         />
         <h1 className="mb-4">List of {userData?.name}`s albums</h1>

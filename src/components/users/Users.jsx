@@ -20,7 +20,7 @@ const Users = ({ users, order, handleSort }) => {
             <div className="d-flex flex-wrap align-items-center justify-content-between gap-2">
               Username
               <button
-                className="btn btn-light btn-sm"
+                className={`btn btn-light btn-sm ${order ? 'active' : ''}`}
                 onClick={handleSort}
                 type="button"
               >
