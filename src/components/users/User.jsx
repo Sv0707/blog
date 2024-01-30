@@ -17,13 +17,13 @@ const User = ({ userData }) => {
           <Button
             className="btn btn-secondary btn-md"
             label="Albums"
-            link={`albums/${userData.id}`}
+            link={`albums/${userData.id}/`}
             role="button"
           />
           <Button
             className="btn btn-secondary btn-md"
             label="Posts"
-            link={`posts/${userData.id}`}
+            link={`posts/${userData.id}/`}
             role="button"
           />
         </div>

@@ -49,7 +49,7 @@ const Home = () => {
       </Helmet>
       <div className="container">
         <div className="d-flex flex-row align-items-center justify-content-between mb-4">
-          <h1>List of users</h1>
+          <h1>Users</h1>
           <div className="d-flex flex-row align-items-center justify-content-end gap-4">
             <Search />
           </div>

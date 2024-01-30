@@ -48,7 +48,7 @@ const Posts = () => {
       <Helmet>
         <title>{`${userData?.name || ''}'s ${metatags.posts.title}`}</title>
         <meta content={`Posts of ${userData?.name || ''}. ${metatags.posts.description}`} name="description" />
-        <link href={`https://sv0707-blog-app.netlify.app/posts/${userId}`} rel="canonical" />
+        <link href={`https://sv0707-blog-app.netlify.app/posts/${userId}/`} rel="canonical" />
         <meta content="index, follow" name="robots" />
       </Helmet>
       <div className="container">
