@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useMemo, useEffect } from 'react'
 import PT from 'prop-types'
-import { getPhotosByAlbumId } from '../api/photos'
-import { capitalizeFirstWord } from '../utils/text-modifiers'
+import { getPhotosByAlbumId } from '../../api/photos'
+import { capitalizeFirstWord } from '../../utils/text-modifiers'
 
 const Album = ({ albumId, title }) => {
   const [photos, setPhotos] = useState([])

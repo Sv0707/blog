@@ -1,6 +1,6 @@
 import React from 'react'
 import PT from 'prop-types'
-import { capitalizeFirstWord } from '../utils/text-modifiers'
+import { capitalizeFirstWord } from '../../utils/text-modifiers'
 
 const Post = ({ postData }) => {
   return (

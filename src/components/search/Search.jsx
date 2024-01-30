@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { useQueryParams } from '../hooks/useQueryParams'
+import { useQueryParams } from '../../hooks/useQueryParams'
+import Button from '../../ui-kit/components/buttons/Button'
 import { debounce } from 'lodash'
 
 const Search = () => {
@@ -18,8 +19,14 @@ const Search = () => {
     setSearchToUrl(name)
   }
 
+  const handleClear = () => {
+    setSearch('')
+    removeQueryParam('search')
+  }
+
+
   return (
-    <form className="form-inline d-flex justify-content-center md-form form-sm">
+    <form className="form-inline d-flex justify-content-center md-form form-sm relative">
       <input
         aria-label="Search"
         className="form-control form-control-md mr-3 w-100"
@@ -29,6 +36,15 @@ const Search = () => {
         type="text"
         value={search}
       />
+      {search && (
+        <Button
+          aria-label="Clear input"
+          className="clear-input-button"
+          label="x"
+          onClick={handleClear}
+          type="reset"
+        />
+      )}
     </form>
   )
 }

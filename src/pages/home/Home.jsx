@@ -3,15 +3,12 @@ import React, {
   useCallback,
   useEffect,
   useMemo,
-  Suspense,
-  lazy,
 } from 'react'
 import { getAllUsers } from '../../api/users'
-import Search from '../../components/Search'
-import Loader from '../../ui-kit/components/loader/Loader'
+import Search from '../../components/search/Search'
+import Users from '../../components/users/Users'
 import { useQueryParams } from '../../hooks/useQueryParams'
 import { parseSortString, makeSortString } from '../../utils/sorting'
-const Users = lazy(() => import('../../components/users/Users'))
 
 const Home = () => {
   const [users, setUsers] = useState([])
@@ -54,9 +51,7 @@ const Home = () => {
         </div>
       </div>
       {users.length > 0 ? (
-        <Suspense fallback={<Loader />}>
-          <Users handleSort={handleSort} order={order} users={users} />
-        </Suspense>
+        <Users handleSort={handleSort} order={order} users={users} />
       ) : (
         <div className="d-flex flex-row align-items-center justify-content-center">No users</div>
       )}

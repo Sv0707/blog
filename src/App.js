@@ -1,17 +1,41 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Home from './pages/home/Home'
-import Posts from './pages/posts/Posts'
-import Albums from './pages/albums/Albums'
+import Loader from './ui-kit/components/loader/Loader'
 import '../src/ui-kit/styles/core.scss'
+
+const Home = lazy(() => import('./pages/home/Home'))
+const Posts = lazy(() => import('./pages/posts/Posts'))
+const Albums = lazy(() => import('./pages/albums/Albums'))
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Home />} path="/" exact />
-        <Route element={<Posts />} path="/posts/:id" />
-        <Route element={<Albums />} path="/albums/:id" />
+        <Route
+          element={
+            <Suspense fallback={<Loader />}>
+              <Home />
+            </Suspense>
+          }
+          path="/"
+          exact
+        />
+        <Route
+          element={
+            <Suspense fallback={<Loader />}>
+              <Posts />
+            </Suspense>
+          }
+          path="/posts/:id"
+        />
+        <Route
+          element={
+            <Suspense fallback={<Loader />}>
+              <Albums />
+            </Suspense>
+          }
+          path="/albums/:id"
+        />
       </Routes>
     </BrowserRouter>
   )

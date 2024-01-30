@@ -1,32 +1,31 @@
 import React from 'react'
 import PT from 'prop-types'
+import Button from '../../ui-kit/components/buttons/Button'
 
 const User = ({ userData }) => {
   return (
     <tr>
-      <th scope="row"><div className="px-2">{userData.id}</div></th>
+      <th scope="row">
+        <div className="px-2">{userData.id}</div>
+      </th>
       <td>{userData.name}</td>
       <td>@{userData.username}</td>
       <td>{userData.email}</td>
       <td>{userData.company.name}</td>
       <td>
         <div className="d-flex flex-wrap align-items-center gap-3">
-          <a
+          <Button
             className="btn btn-secondary btn-md"
-            href={`albums/${userData.id}`}
+            label="Albums"
+            link={`albums/${userData.id}`}
             role="button"
-            tabIndex="-1"
-          >
-            Albums
-          </a>
-          <a
+          />
+          <Button
             className="btn btn-secondary btn-md"
-            href={`posts/${userData.id}`}
+            label="Posts"
+            link={`posts/${userData.id}`}
             role="button"
-            tabIndex="-1"
-          >
-            Posts
-          </a>
+          />
         </div>
       </td>
     </tr>

@@ -1,9 +1,10 @@
 import React, { useState, useCallback, useEffect, useMemo } from 'react'
 import { getOneUser } from '../../api/users'
 import { getAllAlbumsByUser } from '../../api/albums'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import Loader from '../../ui-kit/components/loader/Loader'
-import Album from '../../components/Album'
+import Button from '../../ui-kit/components/buttons/Button'
+import Album from '../../components/albums/Album'
 
 const Albums = () => {
   const [albums, setAlbums] = useState([])
@@ -11,6 +12,16 @@ const Albums = () => {
   const [userData, setUserData] = useState({})
 
   const { id: userId } = useParams()
+
+  const navigate = useNavigate()
+
+  const handleGoBack = () => {
+    if (window.history.state && window.history.state.idx > 0) {
+      navigate(-1)
+    } else {
+      navigate('/', { replace: true })
+    }
+  }
 
   const handleFetch = useCallback(async () => {
     setIsLoading(true)
@@ -23,7 +34,9 @@ const Albums = () => {
   }, [])
 
   const renderContent = useMemo(() => {
-    return albums?.map((album) => <Album albumId={album.id} key={album.id} title={album.title} />)
+    return albums?.map((album) => (
+      <Album albumId={album.id} key={album.id} title={album.title} />
+    ))
   }, [albums])
 
   useEffect(() => {
@@ -32,16 +45,20 @@ const Albums = () => {
 
   return (
     <div className="container">
-      {isLoading ? (
-        <Loader />
-      ) : (
-        <>
-          <h1 className="mb-4">List of {userData?.name}`s albums</h1>
-          <div className="col">
-            <ul className="list-group">{renderContent}</ul>
-          </div>
-        </>
-      )}
+      <Button
+        className="btn btn-light btn-md mb-4"
+        label="Go back"
+        onClick={handleGoBack}
+        type="button"
+      />
+      <h1 className="mb-4">List of {userData?.name}`s albums</h1>
+      <div className="col">
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <ul className="list-group">{renderContent}</ul>
+        )}
+      </div>
     </div>
   )
 }

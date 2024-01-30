@@ -29,3 +29,31 @@ h2 {
   font-size: 24px !important;
 }
 
+.clear-input-button {
+   position: absolute;
+   right: 4px;
+   top: 25%;
+   bottom: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 20px;
+   height: 20px;
+   appearance: none;
+   border: none;
+   border-radius: 50%;
+   background: gray;
+   margin: 0;
+   color: white;
+   font-size: 13px;
+   cursor: pointer;
+ }
+ 
+ .clear-input-button:hover {
+   background: darkgray;
+ }
+
+ .relative {
+  position: relative;
+ }
+
