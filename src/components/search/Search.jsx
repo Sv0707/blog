@@ -15,8 +15,10 @@ const Search = () => {
   }, 500)
 
   const handleSearchChange = (name) => {
+    if (name.trim() || name === '') {
+      setSearchToUrl(name.trim())
+    }
     setSearch(name)
-    setSearchToUrl(name)
   }
 
   const handleClear = () => {
